@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container pt-5 hero">
+      <div class="row align-items-center text-center text-md-left">
+        
+        <div class="col-lg-4">
+          <h1 class="mb-3 display-3">WHAT ARE YOU LOOKING FOR?</h1>
+          <p>Pusat kebutuhan Pembelajaran Mahasiswa Sistem Informasi Kelautan Kampus UPI Serang</p>
+        </div>
+        <div class="col-lg-8">
+          <img src="{% static 'images/1x/asset-1.png' %}" alt="Image" class="img-fluid">    
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="site-section">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="featured-user  mb-5 mb-lg-0">
+              <h3 class="mb-4">Populer Source of Knowladge</h3>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#" class="d-flex align-items-center">
+                    <img src="https://i.postimg.cc/yxQtN6yG/bu-nov.jpg" alt="Image" class="img-fluid mr-2">
+                    <div class="podcaster">
+                      <span class="d-block">Novi Sofia Fitriasari, S.Si., M.T.</span>
+                      <span class="small">Ketua Program Studi SIK</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex align-items-center">
+                    <img src="https://i.postimg.cc/hjK93LRL/pak-wildan.jpg" alt="Image" class="img-fluid mr-2">
+                    <div class="podcaster">
+                      <span class="d-block">Willdan Aprizal Arifin, S.Pd., M.Kom.
+</span>
+                      <span class="small">Kepala Laboratorium Komputer</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex align-items-center">
+                    <img src="https://i.postimg.cc/gJ6wY4bF/bu-ay.jpg alt="Image" class="img-fluid mr-2">
+                    <div class="podcaster">
+                      <span class="d-block">Ayang Armelita Rosalia, S.Pi., M.Si.</span>
+                      <span class="small">Koordinator Kemahasiswaan Program Studi SIK</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex align-items-center">
+                    <img src="https://i.postimg.cc/YS2YwT3v/Sulthan-Izza.png" alt="Image" class="img-fluid mr-2">
+                    <div class="podcaster">
+                      <span class="d-block">Sulthan Izza</span>
+                      <span class="small">Mahasiswa SIK 2021</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex align-items-center">
+                    <img src="https://i.postimg.cc/SRmPyYFq/Afrizal.png" alt="Image" class="img-fluid mr-2">
+                    <div class="podcaster">
+                      <span class="d-block">Afrizal</span>
+                      <span class="small">Ketua Himataska 2022/2023</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex align-items-center">
+                    <img src="https://i.postimg.cc/DwXYX4kr/Rifki-Nauval-Lisana-2.png" alt="Image" class="img-fluid mr-2">
+                    <div class="podcaster">
+                      <span class="d-block">Rifki</span>
+                      <span class="small">Mahasiswa angkatan 2020</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-9">
+            {% for video in berita %}
+            <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+              {% if video.gambar %}
+              <div class="image" style="background-image: url('{{video.gambar.url}}');"></div>
+              {% endif %}
+              <div class="text">
+                <h3 class="font-weight-light"><a href="{{ video.link }}">{{ video.judul }}</a></h3>
+                <div class="text-white mb-3"><span class="text-black-opacity-05"><small>{{ video.sumber }}  <span class="sep">/</span> {{ video.publikasi }} <span class="sep"></span></small></span></div>
+                </div>
+              </div>
+              {% endfor %}
+                    </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+    <!-- <div class="site-section">
+      <div class="container" data-aos="fade-up">
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h2 class="font-weight-bold text-black">Behind The Mic</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+            <div class="team-member">
+
+              <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+
+              <div class="text">
+
+                <h2 class="mb-2 font-weight-light h4">Megan Smith</h2>
+                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
+                <p>
+                  <a href="#" class="text-white p-2"><span class="icon-facebook"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-linkedin"></span></a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+            <div class="team-member">
+
+              <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+
+              <div class="text">
+
+                <h2 class="mb-2 font-weight-light h4">Brooke Cagle</h2>
+                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
+                <p>
+                  <a href="#" class="text-white p-2"><span class="icon-facebook"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-linkedin"></span></a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+            <div class="team-member">
+
+              <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+
+              <div class="text">
+
+                <h2 class="mb-2 font-weight-light h4">Philip Martin</h2>
+                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
+                <p>
+                  <a href="#" class="text-white p-2"><span class="icon-facebook"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-linkedin"></span></a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+            <div class="team-member">
+
+              <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+
+              <div class="text">
+
+                <h2 class="mb-2 font-weight-light h4">Steven Ericson</h2>
+                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
+                <p>
+                  <a href="#" class="text-white p-2"><span class="icon-facebook"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-linkedin"></span></a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+            <div class="team-member">
+
+              <img src="images/person_5.jpg" alt="Image" class="img-fluid">
+
+              <div class="text">
+
+                <h2 class="mb-2 font-weight-light h4">Nathan Dumlao</h2>
+                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
+                <p>
+                  <a href="#" class="text-white p-2"><span class="icon-facebook"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-linkedin"></span></a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+            <div class="team-member">
+
+              <img src="images/person_6.jpg" alt="Image" class="img-fluid">
+
+              <div class="text">
+
+                <h2 class="mb-2 font-weight-light h4">Brooke Cagle</h2>
+                <span class="d-block mb-2 text-white-opacity-05">Creative Director</span>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit ullam reprehenderit nemo.</p>
+                <p>
+                  <a href="#" class="text-white p-2"><span class="icon-facebook"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="text-white p-2"><span class="icon-linkedin"></span></a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div> -->
+
+
+{% endblock %}
